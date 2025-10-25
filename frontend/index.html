@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestor de Eventos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="container">
+<h1>Gestor de Eventos</h1>
+<p class="muted">Crea, edita y comparte eventos. Registra participantes y envía confirmaciones por correo.</p>
+</header>
+
+
+<main class="container grid">
+<section class="card">
+<h2>Nuevo / Editar Evento</h2>
+<form id="event-form">
+<input type="hidden" id="event-id">
+<label>Título<input id="title" required></label>
+<label>Fecha<input id="date" type="date" required></label>
+<label>Hora<input id="time" type="time" required></label>
+<label>Ubicación<input id="location" required></label>
+<label>Descripción<textarea id="description" rows="3"></textarea></label>
+<div class="row">
+<button type="submit">Guardar</button>
+<button type="button" id="reset-form" class="ghost">Limpiar</button>
+</div>
+<small class="muted">Se guardará en Firebase si hay backend; si no, en tu navegador (localStorage).</small>
+</form>
+</section>
+
+
+<section class="card">
+<div class="row between center">
+<h2>Eventos</h2>
+<button id="sync-btn" class="ghost">↻ Sincronizar</button>
+</div>
+<ul id="events-list" class="list"></ul>
+</section>
+</main>
+
+
+<template id="event-item">
+<li class="item">
+<div class="content">
+<h3 class="title"></h3>
+<p class="meta"></p>
+<p class="desc"></p>
+<div class="row wrap">
+<button class="edit">Editar</button>
+<button class="danger delete">Eliminar</button>
+<button class="ghost share">Compartir</button>
+</div>
+</div>
+<form class="register-form">
+<input class="name" placeholder="Tu nombre" required>
+<input class="email" type="email" placeholder="Tu correo" required>
+<button class="primary register">Registrarme</button>
+</form>
+</li>
+</template>
+
+
+<footer class="container">
+<p class="muted">Hecho con HTML, CSS y JS. Backend: Node.js + Firebase.</p>
+</footer>
+
+
+<script>
+window.__API_BASE__ = 'http://localhost:4000';
+</script>
+<script src="app.js" defer></script>
+</body>
+</html>
