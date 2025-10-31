@@ -4,13 +4,13 @@ npm-debug.log*
 yarn-*.log
 
 # Secretos
-.env
+backend/.env
 *.env
 *.key
 *.pem
 *.p12
-*.json   # <-- incluye el service account de Firebase
-
+*.json
+*.txt
 # Editor / SO
 .vscode/
 .DS_Store
