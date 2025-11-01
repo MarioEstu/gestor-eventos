@@ -6,21 +6,14 @@ GET http://localhost:4000/events
 
 GET especifico http://localhost:4000/events/{89e463e3-a9fb-40a2-92b0-7e98d52b3dc6}
 
-PUT actualizar http://localhost:4000/events/{89e463e3-a9fb-40a2-92b0-7e98d52b3dc6}
+POST http://localhost:4000/events
 {
-  "location": "Salón 302 - Campus Quetzaltenango",
-  "description": "Actualización: charla + networking con emprendedores locales."
+  "title":"Demo local",
+  "date":"2025-11-10",
+  "time":"10:00",
+  "location":"UMG",
+  "description":"Prueba"
 }
-
-
-POST registrar un participante http://localhost:4000/events/{89e463e3-a9fb-40a2-92b0-7e98d52b3dc6}/register
-{
-  "name": "Evelin Pérez",
-  "email": "EvelinP@example.com"
-}
-
-[EMAIL] sendgrid ok: 202
-
 
 DELETE http://localhost:4000/events/{89e463e3-a9fb-40a2-92b0-7e98d52b3dc6}
 
